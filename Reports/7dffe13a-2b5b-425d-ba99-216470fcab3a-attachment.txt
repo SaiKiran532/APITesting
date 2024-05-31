@@ -1,0 +1,8 @@
+patch url: https://reqres.in/api/users/2
+json PATCH response body:  {
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2024-05-31T13:56:20.036Z"
+}
+.......PATCH/UPDATE USER IS DONE.......
+.......=====================.......

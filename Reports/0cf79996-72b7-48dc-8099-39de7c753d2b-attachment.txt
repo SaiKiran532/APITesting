@@ -1,0 +1,8 @@
+put url: https://reqres.in/api/users/2
+json PUT response body:  {
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2024-05-31T13:56:19.311Z"
+}
+.......PUT/UPDATE USER IS DONE.......
+.......=====================.......

@@ -1,0 +1,9 @@
+post url: https://reqres.in/api/users
+json POST response body:  {
+    "name": "morpheus",
+    "job": "leader",
+    "id": "597",
+    "createdAt": "2024-05-31T13:56:18.585Z"
+}
+.......POST/Create USER IS DONE.......
+.......=====================.......
