@@ -33,7 +33,7 @@ To execute the tests, follow these steps:
 1. **Clone the repository:**
    ```command promt
    > git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   > cd your-repository
    ```
 
 2. **Install the required dependencies:**
