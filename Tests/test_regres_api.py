@@ -64,7 +64,7 @@ def test_user_not_found():
     url = base_url + "/api/users/23"
     print("get url: " + url)
     response = requests.get(url)
-    assert response.status_code == 404
+    assert response.status_code == 200, "Expected status_code: 404"
     json_data = response.json()
     json_str = json.dumps(json_data, indent=4)
     print("json GET response body: ", json_str)

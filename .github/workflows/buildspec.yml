@@ -1,0 +1,42 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install --upgrade pip
+      - pip install -r Requirements.txt
+
+  pre_build:
+    commands:
+      - echo Pre-build phase Source code is already checked out.
+
+  build:
+    commands:
+      - echo Running mytests...
+      - py.test --rootdir=$CODEBUILD_SRC_DIR --tb=no --junitxml=test_results.xml --html=report.html --self-contained-html --alluredir=allure-results || true
+
+  post_build:
+    commands:
+      - echo Generating Allure report...
+      - allure generate allure-results -o allure-report || true
+      - echo Uploading test reports...
+      - aws s3 cp test_results.xml s3://test-bucket-01/test-results/test_results.xml
+      - aws s3 cp report.html s3://test-bucket-01/test-results/report.html
+      - aws s3 cp --recursive allure-report s3://test-bucket-01/allure-report/
+
+artifacts:
+  files:
+    - test_results.xml
+    - report.html
+    - '**/allure-report/**'
+
+reports:
+  test_reports:
+    files:
+      - test_results.xml
+      - report.html
+    base-directory: ./
+    report-group: my-reports
