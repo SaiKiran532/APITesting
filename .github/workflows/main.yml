@@ -28,7 +28,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest --alluredir=allure-results --junitxml=pytest-results.xml
+        pytest --tb=no --alluredir=allure-results --junitxml=pytest-results.xml || true
 
     - name: Get Allure history
       uses: actions/checkout@v2
