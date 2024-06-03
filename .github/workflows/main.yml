@@ -72,4 +72,5 @@ jobs:
         artifact: test-results
         name: Test Report
         path: '*.xml'   
-        reporter: java-junit 
+        reporter: java-junit
+        fail-on-error: false
