@@ -26,9 +26,9 @@ phases:
       - /opt/allure/allure-2.29.0/bin/allure generate allure-results -o allure-report || true
       - echo Listing Allure report directory...
       - echo Uploading test reports...
-      - aws s3 cp test_results.xml s3://test-bucket-301/test-results/test_results.xml --acl public-read
-      - aws s3 cp report.html s3://test-bucket-301/test-results/report.html --acl public-read
-      - aws s3 cp --recursive allure-report s3://test-bucket-301/allure-report/ --acl public-read
+      - aws s3 cp test_results.xml s3://test-bucket-301/test-results/test_results.xml
+      - aws s3 cp report.html s3://test-bucket-301/test-results/report.html
+      - aws s3 cp --recursive allure-report s3://test-bucket-301/allure-report/
 
 artifacts:
   files:
