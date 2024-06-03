@@ -70,6 +70,6 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         artifact: test-results
-        name: Pytest Tests
+        name: Test Report
         path: '*.xml'   
         reporter: java-junit 
